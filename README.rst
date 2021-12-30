@@ -71,6 +71,7 @@ Missing features
 * Avoid scrolling into the void by only keeping the visible tasks in the viewport
 * Let user dynamically choose a list from the app
 * Change messaging to send task by task to not exceed the maximum message size
+* Include screenshot of app as soon as the simulator is working again
 
 Disclaimer
 ==========
