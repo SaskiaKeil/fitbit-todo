@@ -1,0 +1,35 @@
+{
+  "name": "fitbit-todo",
+  "version": "0.1.0",
+  "devDependencies": {
+    "@fitbit/sdk": "~4.1.0",
+    "@fitbit/sdk-cli": "^1.7.2",
+    "eslint": "^8.5.0",
+    "eslint-config-google": "^0.14.0"
+  },
+  "fitbit": {
+    "appUUID": "b79e8443-9293-4a47-b656-d34214642d85",
+    "appType": "app",
+    "appDisplayName": "Fitbit ToDo",
+    "iconFile": "resources/icon.png",
+    "wipeColor": "#ffffff",
+    "requestedPermissions": [
+      "access_internet"
+    ],
+    "buildTargets": [
+      "higgs",
+      "meson",
+      "gemini",
+      "mira"
+    ],
+    "i18n": {},
+    "defaultLanguage": "en-US"
+  },
+  "scripts": {
+    "build": "fitbit-build",
+    "debug": "fitbit"
+  },
+  "dependencies": {
+    "node-fetch": "^2.6.0"
+  }
+}
