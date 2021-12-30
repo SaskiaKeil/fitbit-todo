@@ -96,4 +96,3 @@ devices.
 
 Also I\'m actually a python backend developer and consequently my JS and
 *making things look nice* experience is very limited.
-o
