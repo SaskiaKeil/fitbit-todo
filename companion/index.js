@@ -30,16 +30,16 @@ messaging.peerSocket.onopen = function() {
           return response.json();
         })
         .then(function(response) {
-          const tasks = [];
           for (const entry_index in response.value) {
             const entry = response.value[entry_index];
-            tasks.push({'title': entry.title, 'id': entry.id});
-          }
 
-          if (messaging.peerSocket.readyState == messaging.peerSocket.OPEN) {
-            messaging.peerSocket.send(tasks);
-          } else {
-            console.error('PeerSocket not open');
+            // Send each task individually to not exceed the message size limit
+            let task = {'title': entry.title, 'id': entry.id, 'index': entry_index};
+            if (messaging.peerSocket.readyState == messaging.peerSocket.OPEN) {
+              messaging.peerSocket.send(task);
+            } else {
+              console.error('PeerSocket not open');
+            }
           }
         })
         .catch((error) => console.log('error', error));

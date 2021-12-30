@@ -2,10 +2,8 @@ import document from 'document';
 import * as messaging from 'messaging';
 
 messaging.peerSocket.onmessage = function(evt) {
-  // Iterate over tasks and put them in the correct slots
-  for (const taskIndex in evt.data) {
-    const task = evt.data[taskIndex];
-    var todoElement = document.getElementById('todo_' + taskIndex);
+    const task = evt.data;
+    var todoElement = document.getElementById('todo_' + task.index);
     const todoCheckbox = todoElement.getElementById('todo-checkbox');
     todoCheckbox.text = task.title;
     // Enable the display of the task
@@ -16,11 +14,10 @@ messaging.peerSocket.onmessage = function(evt) {
       messaging.peerSocket.send({'type': 'complete', 'taskId': task.id});
       todoCheckbox.style.display = 'none';
     }.bind(this, task);
-  }
 };
 
 // Listen for the onopen event and trigger the companion to wake up
 messaging.peerSocket.onopen = function() {
-  messaging.peerSocket.send('Hi!');
+    messaging.peerSocket.send('Hi!');
 };
 
