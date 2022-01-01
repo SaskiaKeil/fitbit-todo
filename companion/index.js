@@ -29,23 +29,27 @@ messaging.peerSocket.onopen = function() {
           return response.json();
         })
         .then(function(response) {
-          for (const entry_index in response.value) {
-            const entry = response.value[entry_index];
+          // Check length of response
+          if (response.value.length == 0) {
+              messaging.peerSocket.send({'status': 'error', 'message': 'No tasks found'});
+          } else {
 
-            // Send each task individually to not exceed the message size limit
-            let task = {'title': entry.title, 'id': entry.id, 'index': entry_index, 'status': 'ok'};
-            if (messaging.peerSocket.readyState == messaging.peerSocket.OPEN) {
-              messaging.peerSocket.send(task);
-            } else {
-              console.error('PeerSocket not open');
-            }
+              for (const entry_index in response.value) {
+                const entry = response.value[entry_index];
+
+                // Send each task individually to not exceed the message size limit
+                let task = {'title': entry.title, 'id': entry.id, 'index': entry_index, 'status': 'ok'};
+                if (messaging.peerSocket.readyState == messaging.peerSocket.OPEN) {
+                  messaging.peerSocket.send(task);
+                } else {
+                  console.error('PeerSocket not open');
+                }
+
+              messaging.peerSocket.send({'status': 'done'});
           }
-
-          // TODO Only do this if there were actually tasks
-          messaging.peerSocket.send({'status': 'done'});
-
-        })
-        .catch((error) => console.log('error', error));
+        }
+    })
+    .catch((error) => console.log('error', error));
   })
 };
 

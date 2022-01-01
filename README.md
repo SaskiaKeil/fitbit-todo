@@ -82,8 +82,8 @@ Resources
 Everything related to developing for Fitbit devices can be found here:  
 <https://dev.fitbit.com/>
 
-Missing features
-----------------
+ToDo
+----
 
 -   Stop execution if secrets are not passed
 -   Force re-paint in case task gets resolved to make row disappear
@@ -91,11 +91,10 @@ Missing features
     the viewport
 -   Let user dynamically choose a list from the app
 -   Fix formatting of JS
--   Reduce font size
--   Avoid that every task is appearing one after another, but send a signal that all data is sent
 -   Keep sorting of tasks as it is in given list
--   Display message if no task is available
 -   Clean up CSS
+-   Add refresh button
+-   Nicer visual effect if tasks gets marked as completed, right now it disappears directly
 
 Disclaimer
 ----------
