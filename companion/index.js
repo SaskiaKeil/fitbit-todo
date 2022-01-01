@@ -23,7 +23,6 @@ messaging.peerSocket.onopen = function() {
     };
 
     const url = getURL(listId);
-    token = token;
 
     fetch(url, requestOptions)
         .then(function(response) {
@@ -73,8 +72,8 @@ function getToken() {
   // Prepare the token request
   const formdata = new FormData();
   formdata.append('client_id', clientId);
-  formdata.append('refresh_token', refreshToken);
   formdata.append('client_secret', clientSecret);
+  formdata.append('refresh_token', refreshToken);
   formdata.append('grant_type', 'refresh_token');
 
   const requestOptions = {

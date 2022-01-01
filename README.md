@@ -30,6 +30,12 @@ Or both combined:
 To be able to install the app you can either use the Fitbit OS Simulator
 or your own phone and Fitbit device.
 
+In the OS simulator the application unfortunately fails with a cross-origin issue though.
+This issue was raised in the fitbit forum already:  
+https://community.fitbit.com/t5/SDK-Development/Avoid-quot-origin-null-quot-set-in-POST-request/m-p/4860950#M15124
+
+To actively develop the application you unfortunately need a real hardware device then.
+
 Read more about it here:  
 <https://dev.fitbit.com/getting-started/>
 
@@ -90,6 +96,7 @@ Missing features
 -   Reduce font size
 -   Avoid that every task is appearing one after another, but send a signal that all data is sent
 -   Keep sorting of tasks as it is in given list
+-   Display note if no task is available
 
 Disclaimer
 ----------
