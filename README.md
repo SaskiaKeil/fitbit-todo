@@ -34,7 +34,7 @@ or your own phone and Fitbit device.
 
 In the OS simulator the application unfortunately fails with a cross-origin issue though.
 This issue was raised in the fitbit forum already:  
-https://community.fitbit.com/t5/SDK-Development/Avoid-quot-origin-null-quot-set-in-POST-request/m-p/4860950#M15124
+<https://community.fitbit.com/t5/SDK-Development/Avoid-quot-origin-null-quot-set-in-POST-request/m-p/4860950>
 
 To actively develop the application you unfortunately need a real hardware device then.
 
