@@ -17,6 +17,10 @@ messaging.peerSocket.onmessage = function(evt) {
           messaging.peerSocket.send({'type': 'complete', 'taskId': task.id});
           todoCheckbox.style.display = 'none';
         }.bind(this, task);
+    // If all tasks are sent enable the display of the whole list
+    } else if (evt.data.status == 'done'){
+        var todoList = document.getElementById('todo_list');
+        todoList.style.display = 'inline';
     // In case of an error display the error message
     } else if (evt.data.status == 'error'){
         var messageElement = document.getElementById('message');

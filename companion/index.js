@@ -40,6 +40,10 @@ messaging.peerSocket.onopen = function() {
               console.error('PeerSocket not open');
             }
           }
+
+          // TODO Only do this if there were actually tasks
+          messaging.peerSocket.send({'status': 'done'});
+
         })
         .catch((error) => console.log('error', error));
   })
