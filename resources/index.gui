@@ -1,4 +1,8 @@
 <svg class="background">
+
+  <!-- Placeholder to put any message to the user -->
+  <textarea class="text" id="message" display="none" />
+
   <use id="todo-list" href="#tile-list">
       <!-- Initiate all elements with display="none" and enable them in JS if there's content -->
       <use id="todo_0" href="#todo" display="none" pointer-events="visible" />

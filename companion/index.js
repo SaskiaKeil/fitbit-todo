@@ -33,7 +33,7 @@ messaging.peerSocket.onopen = function() {
             const entry = response.value[entry_index];
 
             // Send each task individually to not exceed the message size limit
-            let task = {'title': entry.title, 'id': entry.id, 'index': entry_index};
+            let task = {'title': entry.title, 'id': entry.id, 'index': entry_index, 'status': 'ok'};
             if (messaging.peerSocket.readyState == messaging.peerSocket.OPEN) {
               messaging.peerSocket.send(task);
             } else {
@@ -42,7 +42,7 @@ messaging.peerSocket.onopen = function() {
           }
         })
         .catch((error) => console.log('error', error));
-  });
+  })
 };
 
 // Mark task as completed
@@ -67,7 +67,6 @@ messaging.peerSocket.addEventListener('message', (evt) => {
   }
 });
 
-
 function getToken() {
   // Prepare the token request
   const formdata = new FormData();
@@ -84,11 +83,18 @@ function getToken() {
   // Setup a promise to be able to use it in a chained function call
   return new Promise((resolve) => {
     fetch('https://login.microsoftonline.com/common/oauth2/v2.0/token?', requestOptions)
-        .then((response) => response.json())
+        .then((response) => {
+            if (response.ok) {
+              return response.json();
+            } else {
+              throw('Error getting auth token, check your settings');
+            }
+        })
         .then((response) => {
           resolve(response.access_token);
         })
-        .catch((error) => console.log('error', error));
+        // TODO suboptimal mix of concerns here, need to learn more about exception handling in JS
+        .catch((error) => messaging.peerSocket.send({'status': 'error', 'message': error}));
   });
 }
 

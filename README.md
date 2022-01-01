@@ -86,7 +86,6 @@ Missing features
 ----------------
 
 -   Stop execution if secrets are not passed
--   Log authentication issues clearly to the user
 -   Force re-paint in case task gets resolved to make row disappear
 -   Avoid scrolling into the void by only keeping the visible tasks in
     the viewport
@@ -96,6 +95,7 @@ Missing features
 -   Avoid that every task is appearing one after another, but send a signal that all data is sent
 -   Keep sorting of tasks as it is in given list
 -   Display note if no task is available
+-   Clean up CSS
 
 Disclaimer
 ----------
