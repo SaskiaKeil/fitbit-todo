@@ -4,6 +4,8 @@ fitbit-todo
 This repo includes a fitbit app to manage your Microsoft ToDo tasks from
 the watch. You can see the list and mark tasks as completed.
 
+<img src="static/fitbit-todo-on-watch.png" width="250" height="278" />
+
 Building
 --------
 
