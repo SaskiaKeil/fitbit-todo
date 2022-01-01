@@ -85,7 +85,6 @@ Everything related to developing for Fitbit devices can be found here:
 ToDo
 ----
 
--   Stop execution if secrets are not passed
 -   Force re-paint in case task gets resolved to make row disappear
 -   Avoid scrolling into the void by only keeping the visible tasks in
     the viewport

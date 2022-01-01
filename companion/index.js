@@ -14,8 +14,16 @@ const clientId = JSON.parse(settingsStorage.getItem("clientId"))["name"];
 const clientSecret = JSON.parse(settingsStorage.getItem("clientSecret"))["name"];
 const refreshToken = JSON.parse(settingsStorage.getItem("refreshToken"))["name"];
 
-// Listen for the onopen event, get location and then get related articles
+
+// Listen for the onopen event and then pull the list of tasks
 messaging.peerSocket.onopen = function() {
+
+    // Make sure all required fields are set
+    if (clientId === '' | clientSecret === '' | refreshToken === '') {
+      messaging.peerSocket.send({'status': 'error', 'message': 'Missing auth tokens, please set all required fields in the settings'});
+      return;
+    }
+
   getToken().then(function(token) {
     const requestOptions = {
       method: 'GET',
