@@ -94,7 +94,7 @@ Missing features
 -   Reduce font size
 -   Avoid that every task is appearing one after another, but send a signal that all data is sent
 -   Keep sorting of tasks as it is in given list
--   Display note if no task is available
+-   Display message if no task is available
 -   Clean up CSS
 
 Disclaimer

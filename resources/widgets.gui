@@ -9,7 +9,7 @@
     <symbol id="todo" class="todo">
       <use id="todo-tile-list" href="#tile-list-item" class="text">
           <use id="todo-checkbox" href="#checkbox-tile" class="text">
-            <set id="todo-text" href="header/text" attributeName="text-buffer" to="" />
+            <set id="todo-text" href="header/text" attributeName="text-buffer" to="Placeholder" />
           </use>
       </use>
     </symbol>
