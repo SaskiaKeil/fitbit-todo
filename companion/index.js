@@ -52,9 +52,9 @@ messaging.peerSocket.onopen = function() {
                 } else {
                   console.error('PeerSocket not open');
                 }
+              }
 
-              messaging.peerSocket.send({'status': 'done'});
-          }
+          messaging.peerSocket.send({'status': 'done'});
         }
     })
     .catch((error) => console.log('error', error));

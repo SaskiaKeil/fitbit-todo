@@ -1,7 +1,7 @@
 <svg class="background">
 
   <!-- Placeholder to put any message to the user -->
-  <textarea class="text" id="message" display="none"/>
+  <textarea class="text" id="message" display="inline">Loading your tasks...</textarea>
 
   <!-- Initiate all elements with display="none" and enable them in JS if there's content -->
   <use id="todo_list" href="#tile-list" display="none">
