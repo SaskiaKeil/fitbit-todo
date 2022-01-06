@@ -1,4 +1,4 @@
-text {
+.text {
   font-size: 7;
   font-family: System-Regular;
   font-weight: regular;
@@ -16,4 +16,3 @@ text {
   width: 100%;
   height: 100%;
   fill: white;
-

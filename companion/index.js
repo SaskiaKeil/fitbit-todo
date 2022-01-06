@@ -119,6 +119,8 @@ function getURL(listId) {
 
   const params = {
     '$filter': 'status%20eq%20%27notStarted%27',
+    // By default you only get tasks back
+    '$top': 30,
   };
 
   // Construct URL based on the base URL and parameters

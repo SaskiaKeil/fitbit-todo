@@ -88,12 +88,13 @@ ToDo
 -   Force re-paint in case task gets resolved to make row disappear
 -   Avoid scrolling into the void by only keeping the visible tasks in
     the viewport
--   Let user dynamically choose a list from the app
 -   Fix formatting of JS
--   Keep sorting of tasks as it is in given list
+-   Keep sorting of tasks as it is in given list, sorting by importance in desktop app works
 -   Clean up CSS
 -   Add refresh button
--   Nicer visual effect if tasks gets marked as completed, right now it disappears directly
+-   Nicer visual effect if tasks gets marked as completed, right now it disappears directly. Maybe there can be animations?
+-   Decrease font size, longer tasks don't fit into the screen
+-   Let user dynamically choose a list from the app
 
 Disclaimer
 ----------
